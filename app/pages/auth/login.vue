@@ -1,6 +1,9 @@
 <script setup lang="ts"></script>
 <template>
-  <v-container class="fill-height" fluid>
+  <v-container class="fill-height mt-3 position-relative" fluid>
+    <div class="position-absolute top-0 right-0">
+      <switcher-language />
+    </div>
     <v-row justify="center" align="center">
       <v-col cols="12" sm="8" md="4">
         <v-card class="pa-6 rounded-lg" elevation="10">
@@ -10,8 +13,7 @@
             </v-avatar>
           </v-card-title>
 
-          <v-card-subtitle class="text-center text-h6 font-weight-bold"> Welcome back to E-Com! </v-card-subtitle>
-          <p>{{ $t('hello') }}</p>
+          <v-card-subtitle class="text-center text-h6 font-weight-bold"> {{ $t('login.welcome') }} </v-card-subtitle>
           <v-card-text class="text-center text-body-2 mb-4"> Sign in to continue </v-card-text>
 
           <v-form>
@@ -32,7 +34,7 @@
             />
 
             <v-row justify="space-between" align="center">
-              <v-checkbox label="Remember Me" class="pa-0" />
+              <v-checkbox :label="$t('login.remember')" class="pa-0" />
               <!-- <NuxtLink to="/forgot-password" class="text-caption text-blue-darken-2"> Forgot Password? </NuxtLink> -->
             </v-row>
 

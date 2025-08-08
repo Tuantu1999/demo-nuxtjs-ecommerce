@@ -1,11 +1,4 @@
-<script lang="ts"></script>
+<script setup lang="ts"></script>
 <template>
-  <div>
-    <header>
-      <slot name="header"> Default header content </slot>
-    </header>
-    <main>
-      <slot />
-    </main>
-  </div>
+  <div>Default header content</div>
 </template>

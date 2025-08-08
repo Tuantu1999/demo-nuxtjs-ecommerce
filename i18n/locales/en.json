@@ -1,0 +1,11 @@
+{
+  "common": {
+    "or": "or",
+    "login": "Login"
+  },
+  "login": {
+    "welcome": "Welcome back to E-Com!",
+    "remember": "Remember Me",
+    "continue": "Sign in to continue"
+  }
+}

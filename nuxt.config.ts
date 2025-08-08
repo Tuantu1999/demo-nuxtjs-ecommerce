@@ -28,9 +28,12 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
-    langDir: 'locales',
+    locales: [
+      { code: 'en', file: 'en.json' },
+      { code: 'vi', file: 'vi.json' }
+    ],
     defaultLocale: 'vi',
-    vueI18n: './i18n.config.ts'
+    langDir: 'locales/'
   },
   modules: [
     '@pinia/nuxt',
