@@ -1,11 +1,21 @@
 {
   "common": {
     "or": "or",
-    "login": "Login"
+    "login": "Login",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   },
   "login": {
-    "welcome": "Welcome back to E-Com!",
+    "welcome": "Welcome back to E-Commerce!",
     "remember": "Remember Me",
-    "continue": "Sign in to continue"
+    "continue": "Sign in to continue",
+    "dont_have_account": "Don't have an account?",
+    "register": "Register",
+    "forgot_password": "Forgot Password?",
+    "new_password": "New Password",
+    "confirm_password": "Confirm Password",
+    "verify": "Verify",
+    "send_verification": "* We will send you a message to set or reset your new password",
+    "set_new_password": "Set new password for your account."
   }
 }

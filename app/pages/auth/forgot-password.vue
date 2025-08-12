@@ -16,10 +16,10 @@ const backToLogin = () => {
           </v-card-title>
 
           <v-card-subtitle class="text-center text-h6 font-weight-bold">
-            {{ $t('login.new_password') }}
+            {{ $t('login.forgot_password') }}
           </v-card-subtitle>
 
-          <v-card-text class="text-center text-body-2 mb-4"> {{ $t('login.set_new_password') }} </v-card-text>
+          <v-card-text class="text-center text-body-2 mb-4"> {{ $t('login.send_verification') }} </v-card-text>
 
           <v-form>
             <v-text-field
@@ -28,14 +28,6 @@ const backToLogin = () => {
               variant="outlined"
               density="comfortable"
               class="mb-3"
-            />
-
-            <v-text-field
-              label="Password"
-              prepend-inner-icon="mdi-lock"
-              type="password"
-              variant="outlined"
-              density="comfortable"
             />
 
             <v-btn block color="primary" class="mt-4" size="large">{{ $t('login.verify') }}</v-btn>

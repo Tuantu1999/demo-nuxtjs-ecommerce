@@ -1,9 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const router = useRouter();
+
+const forgotPwd = () => {
+  router.push('/auth/forgot-password');
+};
+</script>
 <template>
-  <v-container class="fill-height mt-3 position-relative" fluid>
-    <div class="position-absolute top-0 right-0">
-      <switcher-language />
-    </div>
+  <v-container class="fill-height mt-3" fluid>
     <v-row justify="center" align="center">
       <v-col cols="12" sm="8" md="4">
         <v-card class="pa-6 rounded-lg" elevation="10">
@@ -14,7 +17,7 @@
           </v-card-title>
 
           <v-card-subtitle class="text-center text-h6 font-weight-bold"> {{ $t('login.welcome') }} </v-card-subtitle>
-          <v-card-text class="text-center text-body-2 mb-4"> Sign in to continue </v-card-text>
+          <v-card-text class="text-center text-body-2 mb-4"> {{ $t('login.continue') }} </v-card-text>
 
           <v-form>
             <v-text-field
@@ -35,13 +38,15 @@
 
             <v-row justify="space-between" align="center">
               <v-checkbox :label="$t('login.remember')" class="pa-0" />
-              <!-- <NuxtLink to="/forgot-password" class="text-caption text-blue-darken-2"> Forgot Password? </NuxtLink> -->
+              <div class="text-caption text-blue-darken-2 cursor-pointer" @click="forgotPwd()">
+                {{ $t('login.forgot_password') }}
+              </div>
             </v-row>
 
-            <v-btn block color="primary" class="mt-4" size="large">Login</v-btn>
+            <v-btn block color="primary" class="mt-4" size="large">{{ $t('common.login') }}</v-btn>
           </v-form>
 
-          <div class="text-center my-4">OR</div>
+          <div class="text-center my-4">{{ $t('common.or') }}</div>
 
           <div class="d-flex justify-center">
             <v-btn icon variant="outlined" color="grey">
@@ -56,8 +61,10 @@
           </div>
 
           <div class="text-center mt-6 text-caption">
-            Don’t have an account?
-            <NuxtLink to="/auth/register" class="text-blue-darken-2 font-weight-medium">Register</NuxtLink>
+            {{ $t('login.dont_have_account') }}
+            <NuxtLink to="/auth/register" class="text-blue-darken-2 font-weight-medium">{{
+              $t('login.register')
+            }}</NuxtLink>
           </div>
         </v-card>
       </v-col>

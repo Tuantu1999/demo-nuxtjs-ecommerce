@@ -1,5 +1,21 @@
 {
-  "hello": "Xin chào",
-  "login": "Đăng nhập",
-  "email": "Email của bạn"
+  "common": {
+    "or": "hoặc",
+    "login": "Đăng nhập",
+    "confirm": "Xác nhận",
+    "cancel": "Hủy"
+  },
+  "login": {
+    "welcome": "Chào mừng bạn quay lại E-Commerce!",
+    "remember": "Ghi nhớ đăng nhập",
+    "continue": "Đăng nhập để tiếp tục",
+    "dont_have_account": "Chưa có tài khoản?",
+    "register": "Đăng ký",
+    "forgot_password": "Quên mật khẩu?",
+    "new_password": "Mật khẩu mới",
+    "confirm_password": "Xác nhận mật khẩu",
+    "verify": "Xác minh",
+    "send_verification": "* Chúng tôi sẽ gửi cho bạn một tin nhắn để đặt hoặc đặt lại mật khẩu mới của bạn",
+    "set_new_password": "Thiết lập mật khẩu mới cho tài khoản của bạn."
+  }
 }
