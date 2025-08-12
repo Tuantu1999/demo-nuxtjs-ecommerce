@@ -1,8 +1,14 @@
 <script setup lang="ts">
 const router = useRouter();
+const store = useAuthStore();
 
 const forgotPwd = () => {
   router.push('/auth/forgot-password');
+};
+
+const login = async () => {
+  await store.login('ey1213123');
+  router.push('/HomePages');
 };
 </script>
 <template>
@@ -43,7 +49,7 @@ const forgotPwd = () => {
               </div>
             </v-row>
 
-            <v-btn block color="primary" class="mt-4" size="large">{{ $t('common.login') }}</v-btn>
+            <v-btn block color="primary" class="mt-4" size="large" @click="login()">{{ $t('common.login') }}</v-btn>
           </v-form>
 
           <div class="text-center my-4">{{ $t('common.or') }}</div>
