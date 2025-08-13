@@ -1,8 +1,4 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: "header",
-});
-</script>
+<script setup lang="ts"></script>
 <template>
   <div>
     <p>This is home pages!</p>

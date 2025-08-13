@@ -1,18 +1,42 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const useAuthStore = defineStore("AuthStore", {
+export const useAuthStore = defineStore('AuthStore', {
   state: () => ({
     token: null as string | null,
+    email: '' as string,
+    password: '' as string,
+    loading: false as boolean,
+    isRemember: false as boolean
   }),
   getters: {
-    isLoggedIn: (state) => !!state.token,
+    isLoggedIn: () => {
+      const token = localStorage.getItem('access_tooken');
+      const email = localStorage.getItem('username');
+      const password = localStorage.getItem('password');
+      return !!(token && email && password);
+    }
   },
   actions: {
-    login(token: string) {
+    initStore() {
+      this.email = '';
+      this.password = '';
+    },
+    login(email: string, password: string) {
+      const token = 'mocked_token'; // Replace with actual token retrieval logic
+      this.email = email;
+      this.password = password;
       this.token = token;
+
+      if (this.isRemember) {
+        localStorage.setItem('username', this.email);
+        localStorage.setItem('password', this.password);
+        localStorage.setItem('access_token', token);
+      }
     },
     logout() {
-      this.token = null;
-    },
-  },
+      localStorage.removeItem('username');
+      localStorage.removeItem('password');
+      localStorage.removeItem('access_token');
+    }
+  }
 });

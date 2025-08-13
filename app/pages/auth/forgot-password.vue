@@ -1,6 +1,16 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'login'
+});
+
+const store = useAuthStore();
+
 const backToLogin = () => {
   window.history.back();
+};
+
+const onVerify = () => {
+  console.log('Verification initiated');
 };
 </script>
 <template>
@@ -28,9 +38,20 @@ const backToLogin = () => {
               variant="outlined"
               density="comfortable"
               class="mb-3"
+              :rules="[$rules.required]"
+              v-model="store.email"
             />
 
-            <v-btn block color="primary" class="mt-4" size="large">{{ $t('login.verify') }}</v-btn>
+            <v-btn
+              block
+              color="primary"
+              class="mt-4"
+              size="large"
+              :disabled="!store.email"
+              :loading="store.loading"
+              @click="onVerify()"
+              >{{ $t('login.verify') }}</v-btn
+            >
           </v-form>
         </v-card>
       </v-col>

@@ -5,4 +5,14 @@ export default defineNuxtRouteMiddleware((to, from) => {
   if (!auth.isLoggedIn && !publicPages.includes(to.path)) {
     return navigateTo('/auth/login');
   }
+
+  if (process.client) {
+    const token = localStorage.getItem('token');
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+
+    if (!(token && email && password)) {
+      return navigateTo('/auth/login');
+    }
+  }
 });
