@@ -1,13 +1,21 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'login'
+});
+
 const router = useRouter();
 const store = useAuthStore();
+
+const isDisable = computed(() => {
+  return !store.email || !store.password;
+});
 
 const forgotPwd = () => {
   router.push('/auth/forgot-password');
 };
 
 const login = async () => {
-  await store.login('ey1213123');
+  await store.login(store.email, store.password);
   router.push('/HomePages');
 };
 </script>
@@ -22,16 +30,22 @@ const login = async () => {
             </v-avatar>
           </v-card-title>
 
-          <v-card-subtitle class="text-center text-h6 font-weight-bold"> {{ $t('login.welcome') }} </v-card-subtitle>
-          <v-card-text class="text-center text-body-2 mb-4"> {{ $t('login.continue') }} </v-card-text>
+          <v-card-subtitle class="text-center text-h6 font-weight-bold">
+            {{ $t('login.welcome') }}
+          </v-card-subtitle>
+          <v-card-text class="text-center text-body-2 mb-4">
+            {{ $t('login.continue') }}
+          </v-card-text>
 
-          <v-form>
+          <v-form @submit.prevent="login()">
             <v-text-field
               label="Your Email / Phone Number"
               prepend-inner-icon="mdi-account"
               variant="outlined"
               density="comfortable"
               class="mb-3"
+              :rules="[$rules.required]"
+              v-model="store.email"
             />
 
             <v-text-field
@@ -40,16 +54,29 @@ const login = async () => {
               type="password"
               variant="outlined"
               density="comfortable"
+              :rules="[$rules.required, $rules.minLength(8)]"
+              v-model="store.password"
             />
 
-            <v-row justify="space-between" align="center">
-              <v-checkbox :label="$t('login.remember')" class="pa-0" />
+            <v-row justify="space-between">
+              <v-checkbox :label="$t('login.remember')" class="pa-0" v-model="store.isRemember" />
               <div class="text-caption text-blue-darken-2 cursor-pointer" @click="forgotPwd()">
                 {{ $t('login.forgot_password') }}
               </div>
             </v-row>
 
-            <v-btn block color="primary" class="mt-4" size="large" @click="login()">{{ $t('common.login') }}</v-btn>
+            <ClientOnly>
+              <v-btn
+                block
+                color="primary"
+                class="mt-4"
+                size="large"
+                :disabled="isDisable"
+                :loading="store.loading"
+                @click="login()"
+                >{{ $t('common.login') }}</v-btn
+              >
+            </ClientOnly>
           </v-form>
 
           <div class="text-center my-4">{{ $t('common.or') }}</div>

@@ -1,7 +1,25 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'login'
+});
+
+const store = useAuthStore();
+
+const isDisable = computed(() => {
+  return !store.email || !store.password;
+});
+
 const backToLogin = () => {
   window.history.back();
 };
+
+const register = () => {
+  //
+};
+
+onMounted(() => {
+  store.initStore();
+});
 </script>
 <template>
   <v-container class="fill-height" fluid>
@@ -28,6 +46,8 @@ const backToLogin = () => {
               variant="outlined"
               density="comfortable"
               class="mb-3"
+              :rules="[$rules.required]"
+              v-model="store.email"
             />
 
             <v-text-field
@@ -36,9 +56,20 @@ const backToLogin = () => {
               type="password"
               variant="outlined"
               density="comfortable"
+              :rules="[$rules.required, $rules.minLength(8)]"
+              v-model="store.password"
             />
 
-            <v-btn block color="primary" class="mt-4" size="large">{{ $t('login.verify') }}</v-btn>
+            <v-btn
+              block
+              color="primary"
+              class="mt-4"
+              size="large"
+              :disabled="isDisable"
+              :loading="store.loading"
+              @click="register()"
+              >{{ $t('login.verify') }}</v-btn
+            >
           </v-form>
         </v-card>
       </v-col>
