@@ -10,10 +10,13 @@ export const useAuthStore = defineStore('AuthStore', {
   }),
   getters: {
     isLoggedIn: () => {
-      const token = localStorage.getItem('access_tooken');
-      const email = localStorage.getItem('username');
-      const password = localStorage.getItem('password');
-      return !!(token && email && password);
+      if (typeof window !== 'undefined') {
+        const token = localStorage.getItem('access_token');
+        const email = localStorage.getItem('username');
+        const password = localStorage.getItem('password');
+        return !!(token && email && password);
+      }
+      return false;
     }
   },
   actions: {

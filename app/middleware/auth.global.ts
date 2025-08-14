@@ -6,13 +6,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     return navigateTo('/auth/login');
   }
 
-  if (process.client) {
-    const token = localStorage.getItem('token');
-    const email = localStorage.getItem('email');
-    const password = localStorage.getItem('password');
-
-    if (!(token && email && password)) {
-      return navigateTo('/auth/login');
-    }
+  if (auth.isLoggedIn && to.path === '/auth/login') {
+    return navigateTo('/HomePages');
   }
 });
