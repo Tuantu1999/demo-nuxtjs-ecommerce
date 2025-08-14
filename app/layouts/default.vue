@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CustomHeader from './custom-header.vue';
+</script>
 <template>
   <div class="app-layout">
-    <header class="header">Header</header>
+    <header class="header">
+      <CustomHeader />
+    </header>
 
     <div class="body d-flex">
       <aside class="sidebar">Sidebar</aside>
@@ -14,8 +18,7 @@
 </template>
 <style lang="scss" scoped>
 .header {
-  background-color: red;
-  height: 60px;
+  height: fit-content;
   width: 100%;
 }
 .sidebar {

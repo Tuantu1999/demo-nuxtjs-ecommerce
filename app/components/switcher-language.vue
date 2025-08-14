@@ -7,8 +7,20 @@ const SwitcherLanguage = (lang: 'en' | 'vi') => {
 </script>
 <template>
   <div class="d-flex">
-    <v-img class="cursor-pointer" :width="25" contain src="@/assets/vi.jpg" @click="SwitcherLanguage('vi')"></v-img>
+    <v-img
+      class="cursor-pointer"
+      width="20px"
+      height="20px"
+      src="@/assets/vi.jpg"
+      @click="SwitcherLanguage('vi')"
+    ></v-img>
     <span class="mx-2">/</span>
-    <v-img class="cursor-pointer" :width="25" contain src="@/assets/en.jpg" @click="SwitcherLanguage('en')"></v-img>
+    <v-img
+      class="cursor-pointer"
+      width="20px"
+      height="20px"
+      src="@/assets/en.jpg"
+      @click="SwitcherLanguage('en')"
+    ></v-img>
   </div>
 </template>

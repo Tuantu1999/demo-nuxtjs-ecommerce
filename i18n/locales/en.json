@@ -2,8 +2,10 @@
   "common": {
     "or": "or",
     "login": "Login",
+    "logout": "Logout",
     "confirm": "Confirm",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "search": "Search for products"
   },
   "login": {
     "welcome": "Welcome back to E-Commerce!",
@@ -16,6 +18,8 @@
     "confirm_password": "Confirm Password",
     "verify": "Verify",
     "send_verification": "* We will send you a message to set or reset your new password",
-    "set_new_password": "Set new password for your account."
+    "set_new_password": "Set new password for your account.",
+    "change_password": "Change Password",
+    "current_password": "Current Password"
   }
 }
