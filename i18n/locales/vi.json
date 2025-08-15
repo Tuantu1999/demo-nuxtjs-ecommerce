@@ -21,5 +21,18 @@
     "set_new_password": "Thiết lập mật khẩu mới cho tài khoản của bạn.",
     "change_password": "Đổi mật khẩu",
     "current_password": "Mật khẩu hiện tại"
-  }
+  },
+  "dashboards_mgt": "Báo cáo - Thống kê",
+  "warehouse_mgt": "Quản lý kho hàng",
+  "products_mgt": "Quản lý sản phẩm",
+  "customers_mgt": "Quản lý khách hàng",
+  "staff_mgt": "Quản lý nhân viên",
+  "invoices_mgt": "Quản lý đơn hàng",
+  "sales_mgt": "Quản lý các chương trình khuyến mãi",
+  "settings": "Cài đặt",
+  "home": "Trang chủ",
+  "profile": "Hồ sơ",
+  "sales": "Khuyến mãi",
+  "news": "Tin tức",
+  "contact": "Liên hệ chúng tôi"
 }

@@ -21,5 +21,18 @@
     "set_new_password": "Set new password for your account.",
     "change_password": "Change Password",
     "current_password": "Current Password"
-  }
+  },
+  "dashboards_mgt": "Dashboards Management",
+  "warehouse_mgt": "Warehouse Management",
+  "products_mgt": "Products Management",
+  "customers_mgt": "Customers Management",
+  "staff_mgt": "Staff Management",
+  "invoices_mgt": "Invoices Management",
+  "sales_mgt": "Sales Management",
+  "settings": "Settings",
+  "home": "Home",
+  "profile": "Profile",
+  "sales": "Sales",
+  "news": "News",
+  "contact": "Contact Us"
 }
