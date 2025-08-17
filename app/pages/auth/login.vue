@@ -14,9 +14,9 @@ const forgotPwd = () => {
   router.push('/auth/forgot-password');
 };
 
-const login = async () => {
-  await store.login(store.email, store.password);
-  router.push('/HomePages');
+const login = () => {
+  store.login(store.email, store.password);
+  router.replace('/HomePages');
 };
 </script>
 <template>

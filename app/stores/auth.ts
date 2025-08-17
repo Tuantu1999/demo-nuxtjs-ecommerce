@@ -9,11 +9,11 @@ export const useAuthStore = defineStore('AuthStore', {
     isRemember: false as boolean
   }),
   getters: {
-    isLoggedIn: () => {
+    isLoggedIn: (state) => {
       if (typeof window !== 'undefined') {
-        const token = localStorage.getItem('access_token');
-        const email = localStorage.getItem('username');
-        const password = localStorage.getItem('password');
+        const token = localStorage.getItem('access_token') || state.token;
+        const email = localStorage.getItem('username') || state.email;
+        const password = localStorage.getItem('password') || state.password;
         return !!(token && email && password);
       }
       return false;

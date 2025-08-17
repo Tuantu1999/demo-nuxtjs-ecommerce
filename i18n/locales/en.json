@@ -5,7 +5,26 @@
     "logout": "Logout",
     "confirm": "Confirm",
     "cancel": "Cancel",
-    "search": "Search for products"
+    "search": "Search for products",
+    "clear": "Clear",
+    "save": "Save"
+  },
+  "calendar": {
+    "by_day": "By Day",
+    "by_month": "By Month",
+    "by_year": "By Year",
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
   },
   "login": {
     "welcome": "Welcome back to E-Commerce!",
